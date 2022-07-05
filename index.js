@@ -9,6 +9,7 @@ function championData(){
             const championData = data.data[champName]
             const element = createChampionCard(championData)
         }
+        feather.replace()
     })
 }
 document.addEventListener('DOMContentLoaded', () => {
@@ -19,12 +20,15 @@ function createChampionCard(championData) {
     console.log(championData)
     const div = document.createElement("div");
     const img = document.createElement("img");
+    const a = document.createElement("a");
+    a.innerHTML = '<i class="heart" data-feather="heart"></i>'
     img.src = `http://ddragon.leagueoflegends.com/cdn/img/champion/loading/${championData.id}_0.jpg`
     img.width="230"
     img.height="400"
     const champName = document.createTextNode(championData.name)
     div.appendChild(champName)
     div.appendChild(img)
+    div.appendChild(a)
     div.className="champion"
     document.getElementById("champs").appendChild(div)
     // return the champion card element
