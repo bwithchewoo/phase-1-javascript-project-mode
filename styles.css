@@ -34,3 +34,13 @@
     display: block;
 }
 .dropdown:hover .dropdown-content {display:block;}
+#champs {
+    display:flex;
+    flex-wrap:wrap;
+    justify-content: space-between;
+}
+.champion {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}

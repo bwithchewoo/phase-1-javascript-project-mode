@@ -16,8 +16,20 @@ document.addEventListener('DOMContentLoaded', () => {
 })
     
 function createChampionCard(championData) {
+    console.log(championData)
+    const div = document.createElement("div");
     const img = document.createElement("img");
-    img.src = `http://ddragon.leagueoflegends.com/cdn/12.12.1/img/champion/${championData.image.full}`
-    document.getElementById("champs").appendChild(img)
+    img.src = `http://ddragon.leagueoflegends.com/cdn/img/champion/loading/${championData.id}_0.jpg`
+    img.width="230"
+    img.height="400"
+    const champName = document.createTextNode(championData.name)
+    div.appendChild(champName)
+    div.appendChild(img)
+    div.className="champion"
+    document.getElementById("champs").appendChild(div)
     // return the champion card element
 }
+
+
+
+
