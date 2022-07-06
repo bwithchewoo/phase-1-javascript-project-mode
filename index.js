@@ -15,13 +15,20 @@ function championData(){
 document.addEventListener('DOMContentLoaded', () => {
     championData()
     const input = document.getElementById("search")
-    input.addEventListener('input', () =>{
-        
+    input.addEventListener('input', (event) =>{
+        const text = event.target.value
+        const champList = document.getElementsByClassName("champion")
+        Array.from(champList).forEach((champ) => {
+            if(champ.textContent.toLowerCase().includes(text.toLowerCase())) {
+                champ.style.display = "flex"
+            } else {
+                champ.style.display = "none"
+            }
+        })
     })
 })
     
 function createChampionCard(championData) {
-    console.log(championData)
     const div = document.createElement("div");
     const img = document.createElement("img");
     const a = document.createElement("a");
