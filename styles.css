@@ -52,3 +52,11 @@
     stroke: black;
     fill:gold;
 }
+.card-footer  {
+    display: flex;
+    justify-content: space-between;
+}
+.heart {
+    stroke:black;
+    fill: #FF0800;
+}

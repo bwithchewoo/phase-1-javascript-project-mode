@@ -30,9 +30,14 @@ document.addEventListener('DOMContentLoaded', () => {
 function createChampionCard(championData) {
     const div = document.createElement("div");
     const img = document.createElement("img");
-    const a = document.createElement("a");
+    const star = document.createElement("a");
+    const heart = document.createElement("a")
     const footer = document.createElement("div")
-    a.innerHTML = '<i class="star" data-feather="star"></i>'
+    footer.className = "card-footer"
+    const counter = document.createElement("div")
+    counter.textContent = "Number of likes: 0"
+    star.innerHTML = '<i class="star" data-feather="star"></i>'
+    heart.innerHTML = '<i class="heart" data-feather="heart"></i>'
     img.src = `http://ddragon.leagueoflegends.com/cdn/img/champion/loading/${championData.id}_0.jpg`
     img.width="230"
     img.height="400"
@@ -40,12 +45,19 @@ function createChampionCard(championData) {
     div.appendChild(champName)
     div.appendChild(img)
     div.appendChild(footer)
-    footer.appendChild(a)
+    footer.appendChild(star)
+    footer.appendChild(counter)
+    footer.appendChild(heart)
     footer.style.width = "100%";
     div.className="champion"
     document.getElementById("champs").appendChild(div)
-    a.addEventListener('click', () => {
-        a.firstChild.classList.toggle("clicked")
+    star.addEventListener('click', () => {
+        star.firstChild.classList.toggle("clicked")
+    })
+    let count = 0;
+    heart.addEventListener("click", () => {
+        count++ 
+        counter.textContent = `Number of likes: ${count}`
     })
 }
 
