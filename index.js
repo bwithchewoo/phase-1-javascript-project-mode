@@ -14,6 +14,10 @@ function championData(){
 }
 document.addEventListener('DOMContentLoaded', () => {
     championData()
+    const input = document.getElementById("search")
+    input.addEventListener('input', () =>{
+        
+    })
 })
     
 function createChampionCard(championData) {
@@ -31,11 +35,8 @@ function createChampionCard(championData) {
     div.appendChild(a)
     div.className="champion"
     document.getElementById("champs").appendChild(div)
-    
     a.addEventListener('click', () => {
-        //change color of icon
         a.firstChild.classList.toggle("clicked")
     })
 }
-
 
