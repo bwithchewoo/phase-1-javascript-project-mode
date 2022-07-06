@@ -45,10 +45,10 @@
     flex-direction: column;
     align-items: center;
 }
-.heart {
+.star {
     font-size: 24px;
 }
 .clicked {
-    stroke: red;
-    fill: red;
+    stroke: black;
+    fill:gold;
 }

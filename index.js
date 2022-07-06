@@ -4,7 +4,6 @@ function championData(){
     fetch("http://ddragon.leagueoflegends.com/cdn/12.12.1/data/en_US/champion.json")
     .then(response => response.json())
     .then(data => {
-        console.log(data)
         for (const champName in data.data){
             const championData = data.data[champName]
             const element = createChampionCard(championData)
@@ -32,14 +31,17 @@ function createChampionCard(championData) {
     const div = document.createElement("div");
     const img = document.createElement("img");
     const a = document.createElement("a");
-    a.innerHTML = '<i class="heart" data-feather="heart"></i>'
+    const footer = document.createElement("div")
+    a.innerHTML = '<i class="star" data-feather="star"></i>'
     img.src = `http://ddragon.leagueoflegends.com/cdn/img/champion/loading/${championData.id}_0.jpg`
     img.width="230"
     img.height="400"
     const champName = document.createTextNode(championData.name)
     div.appendChild(champName)
     div.appendChild(img)
-    div.appendChild(a)
+    div.appendChild(footer)
+    footer.appendChild(a)
+    footer.style.width = "100%";
     div.className="champion"
     document.getElementById("champs").appendChild(div)
     a.addEventListener('click', () => {
