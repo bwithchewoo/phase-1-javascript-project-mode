@@ -31,9 +31,11 @@ function createChampionCard(championData) {
     div.appendChild(a)
     div.className="champion"
     document.getElementById("champs").appendChild(div)
-    // return the champion card element
+    
+    a.addEventListener('click', () => {
+        //change color of icon
+        a.firstChild.classList.toggle("clicked")
+    })
 }
-
-
 
 

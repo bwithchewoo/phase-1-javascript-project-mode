@@ -47,3 +47,7 @@
 .heart {
     font-size: 24px;
 }
+.clicked {
+    stroke: red;
+    fill: red;
+}
