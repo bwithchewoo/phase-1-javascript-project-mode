@@ -25,6 +25,19 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         })
     })
+    const roles = document.querySelectorAll("a")
+    Array.from(roles).forEach((roleName) => {
+        roleName.addEventListener("click", () => {
+            const champList = document.getElementsByClassName("champion")
+            Array.from(champList).forEach((champ) => {
+                if(champ.className.toLowerCase().includes(roleName.innerText.toLowerCase()) && champ.textContent.toLowerCase().includes(input.value.toLowerCase())) {
+                    champ.style.display = "flex"
+                } else {
+                    champ.style.display = "none"
+                }
+            })
+        })
+    })
 })
     
 function createChampionCard(championData) {
@@ -42,6 +55,7 @@ function createChampionCard(championData) {
     img.width="230"
     img.height="400"
     const champName = document.createTextNode(championData.name)
+    let roles = championData.tags
     div.appendChild(champName)
     div.appendChild(img)
     div.appendChild(footer)
@@ -49,7 +63,7 @@ function createChampionCard(championData) {
     footer.appendChild(counter)
     footer.appendChild(heart)
     footer.style.width = "100%";
-    div.className="champion"
+    div.classList.add("champion", roles)
     document.getElementById("champs").appendChild(div)
     star.addEventListener('click', () => {
         star.firstChild.classList.toggle("clicked")
