@@ -1,0 +1,8 @@
+# League of Legends Champion List
+
+## Description
+This project takes the API from https://developer.riotgames.com/docs/lol and uses the champion name, tags and splash art images to create champion cards. I was inspired by the actual champion collection section in the League of Legends client to create this project. As a user, you will be able to filter the champions as you type their names into the search bar. You can also click the dropdown menu of roles and it will filter by the roles of each champion. You will be able to check if the champion you type is of a certain role as it takes the input data and searches for the role you clicked at the same time. Therefore, if the champion name you typed is not the same role as what you clicked, nothing will come up. On the other hand, if you just want to see all champions by just their roles, you can leave the search bar empty and it will simply show all champions of that role type. 
+You can click the star button to favorite the champion or click the heart button to like the champion. Every time you like the champion, it will update the champion card footer text to display how many times the like button was clicked. 
+
+## Roadmap
+In the future, I would like to add a button that toggles on and off that sorts by favorited champs. I would also like to add another feature that would allow the user to sort by most liked. Another functionality I would like to implement is that you can change the splash art of the champion by clicking a randomize skin button on the champion card. I also would like to add more champion data that the user can access by clicking the image card to flip the image portion to show more information on the other side such as champion quotes. 
